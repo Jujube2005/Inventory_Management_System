@@ -21,9 +21,10 @@ export class IMSController {
 
         public static createPO(supplierId: number, productId: number, quantity: number) {
         const supplier = new Supplier(supplierId, 'Supplier Name', '123 Supplier St.', '0987654321', 'Supplier Contact');
-        const po = new PO(Math.random(), new Date(), supplier);
+        const po = new PO(Math.random(), new Date(), supplier, productId, quantity);
         console.log('Created Purchase Order:', po);
         return po;
     }
 }
+
 
