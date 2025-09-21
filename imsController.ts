@@ -1,4 +1,6 @@
 import { Product } from './product';
+import { Supplier } from './supplier';
+import { PO } from './po';
 import { Customer } from './customer';
 import { Order } from './order';
 
@@ -16,4 +18,12 @@ export class IMSController {
         console.log('Creatad Order: ', order);
         return order;
     }
+
+        public static createPO(supplierId: number, productId: number, quantity: number) {
+        const supplier = new Supplier(supplierId, 'Supplier Name', '123 Supplier St.', '0987654321', 'Supplier Contact');
+        const po = new PO(Math.random(), new Date(), supplier);
+        console.log('Created Purchase Order:', po);
+        return po;
+    }
 }
+
